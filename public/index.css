@@ -1,0 +1,24 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#topnav {
+    width: 100%;
+    height: 100px;
+    background-color: #898;
+    display: inline-block;
+}
+
+#sidenav {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: #f98;
+    padding-top: 100px;
+}
+
+#root {
+    padding-top: 100px;
+    padding-left: 100px;
+}
