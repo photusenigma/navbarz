@@ -11,6 +11,15 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" type="text/css" href="index.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-sanitize.min.js"></script>
+    <script src="angular-src/script.js"></script>
+    <script src="angular-src/controllers.js"></script>
+    <script src="angular-src/directives.js"></script>
+    <script src="angular-src/services.js"></script>
+  
+    <link rel="stylesheet" href="angular-src/style.css" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -29,6 +38,16 @@
     <div id="topnav"></div>
     <div id="sidenav"></div>
     <div id="root"></div>
+    <div id="angular-root"ng-app="App" ng-controller="AppController">
+      <div id="container" ng-controller="StoreController as store">
+        <h3>Customers</h3>
+        <customer info="item" ng-repeat="item in store.customers"></customer>
+        <h3>Report</h3>
+        <div id="report" ng-bind-html="store.report"></div>
+        <button ng-click='store.resetCustomer(0)'>Reset {{store.getCustomer(0).name}}</button>
+        <button ng-click='store.resetCustomer(1)'>Reset {{store.getCustomer(1).name}}</button>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
