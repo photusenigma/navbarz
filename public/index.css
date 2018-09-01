@@ -18,12 +18,6 @@ body {
     padding-top: 100px;
 }
 
-#root {
-    padding-top: 100px;
-    padding-left: 100px;
-}
-
 #angular-root {
     margin-left: 100px;
-    padding-left: 50px;
 }

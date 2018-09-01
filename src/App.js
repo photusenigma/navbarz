@@ -21,6 +21,13 @@ class TopPortal extends Component {
   componentWillUnmount() {
     topnavelement.removeChild(this.el);
   }
+
+  componentDidUpdate() {
+    if (window.location.pathname == "/") {
+      window.location.href = "http://127.0.0.1:3000";
+    }
+  }
+
   render() {
     return ReactDOM.createPortal(
       this.props.children,
@@ -50,14 +57,14 @@ class SidePortal extends Component {
 }
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
+  <div className="react-app-container">
+  hvjlkhsadlfhskjlfhsaldhafskl
   </div>
 )
 
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>This is an About page. We keep the Abouts here.</h2>
   </div>
 )
 
@@ -72,7 +79,6 @@ class App extends Component {
           <SidePortal>
             <SideNav />
           </SidePortal>
-
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={About}/>
         </div>
@@ -81,16 +87,16 @@ class App extends Component {
   }
 }
 const TopNav = () => (
-  <div className="nav-container">
-      <div className="nav-icon"><Link to="/">topHome</Link></div>
-      <div className="nav-icon"><Link to="/about">topAbout</Link></div>
+  <div className="top-nav-container">
+      <div className="top-nav-icon"><Link to="/">Just react</Link></div>
+      <div className="top-nav-icon"><Link to="/ang">React with Angular</Link></div>
   </div>
 )
 
 const SideNav = () => (
-  <div className="nav-container">
-      <div className="nav-icon"><Link to="/">sideHome</Link></div>
-      <div className="nav-icon"><Link to="/about">sideAbout</Link></div>
+  <div className="side-nav-container">
+      <div className="side-nav-icon"><Link to="/">sideHome</Link></div>
+      <div className="side-nav-icon"><Link to="/about">sideAbout</Link></div>
   </div>
 )
 
